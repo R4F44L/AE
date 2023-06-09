@@ -1,0 +1,11 @@
+F 0,99
+F2 0,1
+CR 0,99
+cwielkoscPopulacji 500
+ciloscIteracji 500
+cwymiar 2
+cminimum -512
+cmaximum 512
+tYP_MUTAJCI 1
+tYP_FUNKCJI 8
+isMinimum 1

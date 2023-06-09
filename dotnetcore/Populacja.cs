@@ -15,14 +15,20 @@ public class Populacja
 	{
 		elementy = Osobniks;
 	}
-	public Osobnik Najlepszy()
+	public Osobnik Najlepszy(int isMinimum = 0)
 	{
-		return elementy.OrderBy(x => x.fitness).FirstOrDefault();
+		if (isMinimum == 0)
+			return elementy.OrderBy(x => -x.fitness).FirstOrDefault();
+		else
+			return elementy.OrderBy(x => x.fitness).FirstOrDefault();
 	}
 
-	public List<Osobnik> xNajlepszych()
+	public List<Osobnik> xNajlepszych(int isMinimum = 0)
 	{
-		return elementy.OrderBy(x => -x.fitness).ToList();
+		if (isMinimum == 0)
+			return elementy.OrderBy(x => -x.fitness).ToList();
+		else
+			return elementy.OrderBy(x => x.fitness).ToList();
 	}
 
 	public List<Osobnik> Losowi(Random rnd, int number, List<Osobnik> doOminiecia)
