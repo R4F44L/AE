@@ -278,7 +278,7 @@ namespace AlgorytmyDE
                     for (int i = 0; i < iloscIteracji; i++)
                     {
                         Mutacja(populacja, typMutacji);
-                        w.WriteLine((-(populacja.xNajlepszych()[0].fitness)).ToString());
+                        // w.WriteLine((-(populacja.xNajlepszych()[0].fitness)).ToString());
                     }
 
                     // if isMinimum multiply every fitness by -1
@@ -646,7 +646,9 @@ namespace AlgorytmyDE
         public static List<double> ReadParameters(string fileName)
         {
             var parameters = new List<double>();
-
+            string executablePath = System.Reflection.Assembly.GetExecutingAssembly().Location;
+            string executableDirectory = Path.GetDirectoryName(executablePath);
+            Directory.SetCurrentDirectory(executableDirectory);
             using (var reader = new StreamReader(fileName))
             {
                 string line;
